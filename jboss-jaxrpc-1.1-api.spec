@@ -1,10 +1,10 @@
-%_javapackages_macros
+%{?_javapackages_macros:%_javapackages_macros}
 %global namedreltag .Final
 %global namedversion %{version}%{?namedreltag}
 
 Name:             jboss-jaxrpc-1.1-api
 Version:          1.0.1
-Release:          5.0%{?dist}
+Release:          5.1%{?dist}
 Summary:          Java API for XML-Based RPC (JAX-RPC) 1.1
 
 License:          CDDL or GPLv2 with exceptions
