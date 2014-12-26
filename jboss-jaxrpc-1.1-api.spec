@@ -4,9 +4,9 @@
 
 Name:             jboss-jaxrpc-1.1-api
 Version:          1.0.1
-Release:          5.1%{?dist}
+Release:          8.1
 Summary:          Java API for XML-Based RPC (JAX-RPC) 1.1
-
+Group:		  Development/Java
 License:          CDDL or GPLv2 with exceptions
 Url:              http://www.jboss.org
 
@@ -50,33 +50,15 @@ This package contains the API documentation for %{name}.
 %setup -q -n jboss-jaxrpc-1.1-api
 
 %build
-mvn-rpmbuild install javadoc:aggregate
+%mvn_build
 
 %install
-install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
-install -d -m 755 $RPM_BUILD_ROOT%{_mavenpomdir}
-install -d -m 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}
+%mvn_install
 
-# JAR
-install -pm 644 target/jboss-jaxrpc-api_1.1_spec-%{namedversion}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
-
-# POM
-install -pm 644 pom.xml $RPM_BUILD_ROOT%{_mavenpomdir}/JPP-%{name}.pom
-
-# DEPMAP
-%add_maven_depmap
-
-# APIDOCS
-cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
-
-%files
-%{_javadir}/*
-%{_mavenpomdir}/*
-%{_mavendepmapfragdir}/*
+%files -f .mfiles
 %doc README LICENSE
 
-%files javadoc
-%{_javadocdir}/%{name}
+%files javadoc -f .mfiles-javadoc
 %doc LICENSE
 
 %changelog
