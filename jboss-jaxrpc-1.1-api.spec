@@ -4,7 +4,7 @@
 
 Name:             jboss-jaxrpc-1.1-api
 Version:          1.0.1
-Release:          8.2
+Release:          8.3
 Summary:          Java API for XML-Based RPC (JAX-RPC) 1.1
 Group:		  Development/Java
 License:          CDDL or GPLv2 with exceptions
