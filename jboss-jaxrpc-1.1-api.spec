@@ -8,7 +8,7 @@ Release:          8.3
 Summary:          Java API for XML-Based RPC (JAX-RPC) 1.1
 Group:		  Development/Java
 License:          CDDL or GPLv2 with exceptions
-Url:              http://www.jboss.org
+Url:              https://www.jboss.org
 
 # git clone git://github.com/jboss/jboss-jaxrpc-api_spec.git jboss-jaxrpc-1.1-api
 # cd jboss-jaxrpc-1.1-api/ && git archive --format=tar --prefix=jboss-jaxrpc-1.1-api/ jboss-jaxrpc-api_1.1_spec-1.0.1.Final | xz > jboss-jaxrpc-1.1-api-1.0.1.Final.tar.xz
